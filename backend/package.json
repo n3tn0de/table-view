@@ -1,0 +1,17 @@
+{
+  "name": "table-view-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node checkEnv && tsx watch ./index.ts"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.3",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.3",
+    "express": "^4.18.2",
+    "rm": "^0.1.8",
+    "tsx": "^3.12.5",
+    "typescript": "^5.0.2"
+  }
+}

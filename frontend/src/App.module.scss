@@ -1,0 +1,15 @@
+body {
+  background-color: #ccc;
+}
+
+.app {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.app .pre {
+  flex: 0 1 auto;
+  justify-self: flex-end;
+}
