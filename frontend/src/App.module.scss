@@ -1,15 +1,51 @@
-body {
-  background-color: #ccc;
-}
-
 .app {
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.app .pre {
+.code {
+  margin: 0;
+  width: 500px;
   flex: 0 1 auto;
   justify-self: flex-end;
+  background-color: #1a1a1a;
+  color: #ccc;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0 10px;
+}
+
+.table {
+  min-width: 50vh;
+  overflow: auto;
+  margin: 40px auto 0;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.db {
+  display: flex;
+  height: 30px;
+  margin: 0 0 20px;
+  width: 100%;
+  gap: 10px;
+}
+
+.label {
+  display: flex;
+  flex: 1 1 auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.input {
+  flex: 1 1 auto;
+  height: 80%;
+}
+
+.reload {
+  margin-left: auto;
 }
