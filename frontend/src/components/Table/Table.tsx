@@ -1,8 +1,16 @@
 import React, { FC } from 'react';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
 // @ts-ignore
 import ColumnResizer from "react-table-column-resizer";
 
 import styles from './Table.module.scss';
+
+const Th = ({id, text}: Record<string, string>) =>
+  <>
+    <th className={styles.th} style={{width: '120px'}} key={id}>{text}</th>
+    <ColumnResizer className="columnResizer" minWidth={0} />
+  </>
 
 export const Table = ({list=[], columnsMap={}}: any)=> {
 
@@ -10,12 +18,7 @@ export const Table = ({list=[], columnsMap={}}: any)=> {
     <table className={styles.table}>
       <thead>
         <tr>
-          { Object.entries(columnsMap).map(([column, {id}]: any) => (
-              <>
-                <th className={styles.th} style={{width: '120px'}} key={id}>{column}</th>
-                <ColumnResizer className="columnResizer" minWidth={0} />
-              </>
-            ))
+          { Object.entries(columnsMap).map(([text, {id}]: any) => <Th {...{id, text}} />)
           }
         </tr>
       </thead>

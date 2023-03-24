@@ -4,11 +4,12 @@ import { notion } from '../notion'
 
 const {
   NOTION_DB='8af0391775274da183f338f61e911d25',
+  DEFAULT_FILTER_DEPTH=2,
 } = process.env
 
 export const getDb = async (req: Request, res: Response) => {
 
-  const { id=NOTION_DB, sorts=[] } = req.body
+  const { id=NOTION_DB, sorts=[], filter } = req.body
 
   let query
 
@@ -46,7 +47,7 @@ export const getDb = async (req: Request, res: Response) => {
         }}
       }, {})
     })
-    res.json({list, columnsMap})
+    res.json({list, columnsMap, DEFAULT_FILTER_DEPTH})
   } catch (error) {
     const defaultMessage = "Unknown error"
     const {
