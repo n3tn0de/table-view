@@ -5,6 +5,7 @@ import { useStore } from './store'
 
 import { Table } from './components/Table/Table'
 import { Sort } from './components/Sort/Sort'
+import { Filter } from './components/Filter/Filter'
 
 function App() {
   const { list, columnsMap} = useStore((state: any) => state.data)
@@ -12,9 +13,14 @@ function App() {
   const isFetching = useStore((state: any) => state.isFetching)
   const isFetched = useStore((state: any) => state.isFetched)
   const fetchDb = useStore((state: any) => state.fetchDb)
+
   const sorts = useStore((state: any) => state.sorts)
   const addSort = useStore((state: any) => state.addSort)
   const removeSort = useStore((state: any) => state.removeSort)
+
+  const filter = useStore((state: any) => state.filter)
+  const addFilter = useStore((state: any) => state.addFilter)
+  const removeFilter = useStore((state: any) => state.removeFilter)
 
   const fetch = () => fetchDb();
 
@@ -38,9 +44,8 @@ function App() {
             </button>
           </div>
 
-
           <div
-            className={styles.sort}
+            className={styles.controls}
           >
             <Sort
               {...{
@@ -51,8 +56,16 @@ function App() {
                 isFetched,
               }}
             />
+            <Filter
+              {...{
+                columnsMap,
+                filter,
+                addFilter,
+                removeFilter,
+                isFetched,
+              }}
+            />
           </div>
-
 
           <Table {...{list, columnsMap}} />
       </div>

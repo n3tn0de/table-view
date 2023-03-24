@@ -6,7 +6,7 @@
   gap: 10px;
 }
 
-.sort {
+.filter {
   display: flex;
   gap: 5px;
   height: 25px;
@@ -19,8 +19,14 @@
     color: #000;
     background: #ccc;
   }
+
+  input {
+    flex: 1 1 auto;
+  }
 }
 
 .button {
+  flex: 0 0 auto;
+  white-space: nowrap;
   margin-left: auto;
 }
