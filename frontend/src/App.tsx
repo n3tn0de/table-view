@@ -26,13 +26,6 @@ function App() {
     <div className={styles.app}>
       <div className={styles.table}>
           <div className={styles.db}>
-            {/* <label className={styles.label}>
-              DB ID
-              <input
-                className={styles.input}
-                type="text"
-              />
-            </label> */}
             { error && <p>{error}</p> }
             { isFetching &&
                 <p>Loading...</p>
