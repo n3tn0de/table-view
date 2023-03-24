@@ -4,13 +4,17 @@ import styles from './App.module.scss';
 import { useStore } from './store'
 
 import { Table } from './components/Table/Table'
+import { Sort } from './components/Sort/Sort'
 
 function App() {
-  const data = useStore((state: any) => state.data)
+  const { list, columnsMap} = useStore((state: any) => state.data)
   const error = useStore((state: any) => state.error)
   const isFetching = useStore((state: any) => state.isFetching)
   const isFetched = useStore((state: any) => state.isFetched)
   const fetchDb = useStore((state: any) => state.fetchDb)
+  const sorts = useStore((state: any) => state.sorts)
+  const addSort = useStore((state: any) => state.addSort)
+  const removeSort = useStore((state: any) => state.removeSort)
 
   const fetch = () => fetchDb();
 
@@ -29,6 +33,10 @@ function App() {
                 type="text"
               />
             </label> */}
+            { error && <p>{error}</p> }
+            { isFetching &&
+                <p>Loading...</p>
+            }
             <button
               className={styles.reload}
               onClick={fetch}
@@ -38,17 +46,23 @@ function App() {
           </div>
 
 
-        { isFetching ?
-            <p>Loading...</p> :
-            error ? <p>{error}</p> : <Table {...data} />
-        }
-      </div>
+          <div
+            className={styles.sort}
+          >
+            <Sort
+              {...{
+                columnsMap,
+                sorts,
+                addSort,
+                removeSort,
+                isFetched,
+              }}
+            />
+          </div>
 
-      {/* <div className={styles.code}>
-        <pre>
-          {JSON.stringify({ error, data }, null, "  ")}
-        </pre>
-      </div> */}
+
+          <Table {...{list, columnsMap}} />
+      </div>
     </div>
   );
 }

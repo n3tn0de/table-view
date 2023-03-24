@@ -16,6 +16,7 @@ app.use(async (req: Request, res: Response, next: NextFunction) => {
   next()
 })
 
+app.use(express.json())
 app.use(prefix, router)
 
 app.listen(PORT, () => {

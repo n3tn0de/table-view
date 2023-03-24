@@ -17,7 +17,7 @@
 }
 
 .table {
-  min-width: 50vh;
+  width: 100vh;
   overflow: auto;
   margin: 40px auto 0;
   padding: 20px;
@@ -32,6 +32,8 @@
   margin: 0 0 20px;
   width: 100%;
   gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .label {
@@ -47,5 +49,9 @@
 }
 
 .reload {
-  margin-left: auto;
+  height: 30px;
+  // margin-left: auto;
+}
+.sort {
+  margin: 0 0 40px;
 }

@@ -1,0 +1,27 @@
+@import '../../scss/variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.sort {
+  display: flex;
+  gap: 5px;
+  height: 25px;
+  margin-bottom: 10px;
+
+  div {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #000;
+    background: #ccc;
+  }
+}
+
+.button {
+  margin-left: auto;
+}

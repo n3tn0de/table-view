@@ -7,13 +7,15 @@ const {
 } = process.env
 
 export const getDb = async (req: Request, res: Response) => {
-  const { id=NOTION_DB } = req.params
+
+  const { id=NOTION_DB, sorts=[] } = req.body
 
   let query
 
   try {
     query = await notion.databases.query({
       database_id: id,
+      sorts,
     })
 
     let columnsMap = {}
