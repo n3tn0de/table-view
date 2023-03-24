@@ -47,7 +47,7 @@ export const Table = ({list=[], columnsMap={}}: any)=> {
               ) {
                 content = value
               }
-
+              // TODO extract to separate componet(s)
               if (type === 'multi_select') {
                 content = value.map((item: any, index: number) => {
                   if (index === value.length - 1) {
