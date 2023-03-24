@@ -14,7 +14,7 @@ WORKDIR /app
 COPY --from=deps /tmp/deps.json ./package.json
 COPY package-lock.json .
 
-RUN npm ci
+RUN npm ci --legacy-peer-deps
 # https://docs.npmjs.com/cli/ci.html#description
 
 COPY . .

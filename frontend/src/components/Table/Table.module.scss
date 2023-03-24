@@ -23,7 +23,7 @@
     border: $text-color solid 1px;
     padding: 5px 10px;
     text-align: left;
-    // max-width: 160px;
+    min-width: 0;
     max-height: 20px;
     overflow: hidden;
   }
@@ -33,6 +33,13 @@
 
   td {
     font-weight: 400;
+  }
+
+  :global(.columnResizer) {
+    background-color: rgb(182, 179, 179);
+    width: 4px;
+    padding: 0 0 0 0;
+    border: none;
   }
 }
 

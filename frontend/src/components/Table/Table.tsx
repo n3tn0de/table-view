@@ -1,4 +1,7 @@
 import React, { FC } from 'react';
+// @ts-ignore
+import ColumnResizer from "react-table-column-resizer";
+
 import styles from './Table.module.scss';
 
 export const Table = ({list=[], columnsMap={}}: any)=> {
@@ -8,7 +11,10 @@ export const Table = ({list=[], columnsMap={}}: any)=> {
       <thead>
         <tr>
           { Object.entries(columnsMap).map(([column, {id}]: any) => (
-              <th style={{width: '120px'}} key={id}>{column}</th>
+              <>
+                <th style={{width: '120px'}} key={id}>{column}</th>
+                <ColumnResizer className="columnResizer" minWidth={0} />
+              </>
             ))
           }
         </tr>
@@ -69,7 +75,10 @@ export const Table = ({list=[], columnsMap={}}: any)=> {
               }
 
               return(
-                <td key={index}>{content}</td>
+                <>
+                  <td key={index}>{content}</td>
+                  <ColumnResizer className="columnResizer" minWidth={0} />
+                </>
               )})
             }
           </tr>
