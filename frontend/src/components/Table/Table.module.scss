@@ -4,7 +4,7 @@
   position: relative;
   table-layout: fixed;
   border-collapse: collapse;
-  border: $text-color solid 1px;
+  border: $border-color solid 1px;
   // overflow: hidden;
   // border-radius: 10px;
 
@@ -30,7 +30,7 @@
 
 
 .th, .td {
-  border: $text-color solid 1px;
+  border: $border-color solid 1px;
   padding: 5px 10px;
   text-align: left;
   min-width: 0;
@@ -48,7 +48,7 @@
 .stub {
   // width: 0;
   position: relative;
-  border: $text-color solid 1px;
+  border: $border-color solid 1px;
   border-left: 0;
   border-right: 0;
 
@@ -59,7 +59,7 @@
     left: 1px;
     width: 1px;
     height: 100%;
-    background: $text-color;
+    background: $border-color;
   }
 
   &:last-of-type {

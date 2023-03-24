@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { useStore } from '../../store'
 
 import styles from './Sort.module.scss';
 
