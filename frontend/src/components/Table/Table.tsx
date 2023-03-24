@@ -12,7 +12,7 @@ export const Table = ({list=[], columnsMap={}}: any)=> {
         <tr>
           { Object.entries(columnsMap).map(([column, {id}]: any) => (
               <>
-                <th style={{width: '120px'}} key={id}>{column}</th>
+                <th className={styles.th} style={{width: '120px'}} key={id}>{column}</th>
                 <ColumnResizer className="columnResizer" minWidth={0} />
               </>
             ))
@@ -76,8 +76,9 @@ export const Table = ({list=[], columnsMap={}}: any)=> {
 
               return(
                 <>
-                  <td key={index}>{content}</td>
-                  <ColumnResizer className="columnResizer" minWidth={0} />
+                  <td className={styles.td}key={index}>{content}</td>
+                  <td className={styles.stub}></td>
+                  {/* <ColumnResizer className="columnResizer" minWidth={0} /> */}
                 </>
               )})
             }

@@ -4,42 +4,66 @@
   position: relative;
   table-layout: fixed;
   border-collapse: collapse;
-  overflow: hidden;
-  border-radius: 10px;
+  border: $text-color solid 1px;
+  // overflow: hidden;
+  // border-radius: 10px;
 
-  &:after {
-    z-index: -1;
-    position: absolute;
-    top: -1px;
-    left: 0;
-    width: calc(100% - 2px);
-    height: calc(100% - 1px);
-    content: '';
-    border-radius: 10px;
-    border: $text-color solid 1px;
-  }
-
-  th, td {
-    border: $text-color solid 1px;
-    padding: 5px 10px;
-    text-align: left;
-    min-width: 0;
-    max-height: 20px;
-    overflow: hidden;
-  }
-
-  th {
-  }
-
-  td {
-    font-weight: 400;
-  }
+  // &:after {
+  //   z-index: -1;
+  //   position: absolute;
+  //   top: -1px;
+  //   left: 0;
+  //   width: calc(100% - 2px);
+  //   height: calc(100% - 1px);
+  //   content: '';
+  //   border-radius: 10px;
+  //   border: $text-color solid 1px;
+  // }
 
   :global(.columnResizer) {
-    background-color: rgb(182, 179, 179);
+    background-color: $text-color;
     width: 4px;
     padding: 0 0 0 0;
     border: none;
+  }
+}
+
+
+.th, .td {
+  border: $text-color solid 1px;
+  padding: 5px 10px;
+  text-align: left;
+  min-width: 0;
+  max-height: 20px;
+  overflow: hidden;
+  // border-left: 0;
+}
+
+.td {
+  font-weight: 400;
+  border-left: 0;
+  border-right: 0;
+}
+
+.stub {
+  // width: 0;
+  position: relative;
+  border: $text-color solid 1px;
+  border-left: 0;
+  border-right: 0;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 1px;
+    height: 100%;
+    background: $text-color;
+  }
+
+  &:last-of-type {
+    opacity: 0;
   }
 }
 
