@@ -7,7 +7,7 @@ export const Table = ({list=[], columnsMap={}}: any)=> {
     <table className={styles.table}>
       <thead>
         <tr>
-          { Object.entries(columnsMap).map(([column, id]: any) => (
+          { Object.entries(columnsMap).map(([column, {id}]: any) => (
               <th style={{width: '120px'}} key={id}>{column}</th>
             ))
           }
